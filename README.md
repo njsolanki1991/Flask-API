@@ -63,26 +63,6 @@ _Response:_
   "message": "User deleted successfully!"
 }
 ```
-
----
-## Dockerfile
-```dockerfile
-FROM python:3.9
-WORKDIR /app
-COPY . .
-RUN pip install -r requirements.txt
-EXPOSE 2222
-CMD ["python", "app.py"]
-```
-
----
-## Environment Variables
-You can configure environment variables using a `.env` file.
-
----
-## Contributing
-Feel free to submit issues or pull requests.
-
 ---
 ## License
 This project is licensed under the MIT License.
