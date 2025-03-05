@@ -1,48 +1,30 @@
-# Flask User Management API
+# Flask Docker Project
 
-This is a simple **Flask-based REST API** for user management, storing user data in a JSON file. The project is **containerized using Docker** for easy deployment.
-
----
-## Features
-- Add a new user (`POST /users`)
-- Get all users (`GET /users`)
-- Get a specific user by ID (`GET /users/<id>`)
-- Delete a user (`DELETE /users/<id>`)
-- Uses a **JSON file** (`users.json`) as a lightweight database
-- Docker support for easy deployment
+This project demonstrates how to containerize a Flask application using Docker. It is a simple **Flask-based REST API** that allows users to be added, retrieved, and managed within a containerized environment.
 
 ---
-## Installation & Setup
-
-### 1️⃣ **Clone the Repository**
-```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
-```
-
-### 2️⃣ **Run the Flask App Locally**
-Make sure you have Python installed.
-```sh
-pip install flask
-python flask.py
-```
-The server will run on:  
-📌 **http://127.0.0.1:5000/**
+## Project Structure
+- `app.py` - The main Flask application.
+- `requirements.txt` - Contains required dependencies.
+- `Dockerfile` - Instructions to build the Docker image.
+- `users.json` - A simple JSON file used as a lightweight database.
 
 ---
-## Running with Docker
+## Building and Running with Docker
 
 ### 1️⃣ **Build the Docker Image**
 ```sh
-docker build -t flask-user-api .
+docker build -t flask-docker-app .
 ```
 
 ### 2️⃣ **Run the Docker Container**
 ```sh
-docker run -p 8080:5000 flask-user-api
+docker run -p 2222:2222 flask-docker-app
 ```
+- The **first 2222** is the port on the host machine.
+- The **second 2222** is the port inside the container where the Flask app runs.
 - The API will be available at:  
-  📌 **http://127.0.0.1:8080/**
+  📌 **http://127.0.0.1:2222/**
 
 ---
 ## API Endpoints
@@ -81,4 +63,27 @@ _Response:_
   "message": "User deleted successfully!"
 }
 ```
+
+---
+## Dockerfile
+```dockerfile
+FROM python:3.9
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+EXPOSE 2222
+CMD ["python", "app.py"]
+```
+
+---
+## Environment Variables
+You can configure environment variables using a `.env` file.
+
+---
+## Contributing
+Feel free to submit issues or pull requests.
+
+---
+## License
+This project is licensed under the MIT License.
 
