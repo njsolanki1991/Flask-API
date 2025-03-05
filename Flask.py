@@ -64,8 +64,9 @@ def delete_user(user_id):
     users = [user for user in users if user["id"] != user_id]
     return jsonify({"message": "User deleted successfully!"})
 
+
 # if __name__ == '__main__':
-#     app.run(debug=True)  # Runs on http://127.0.0.1:5000
+#     app.run(debug=True, port=2222)  # Runs on http://127.0.0.1:2222
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0',port=2222, debug=True)
