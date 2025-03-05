@@ -4,7 +4,7 @@ This project demonstrates how to containerize a Flask application using Docker. 
 
 ---
 ## Project Structure
-- `app.py` - The main Flask application.
+- `flask.py` - The main Flask application.
 - `requirements.txt` - Contains required dependencies.
 - `Dockerfile` - Instructions to build the Docker image.
 - `users.json` - A simple JSON file used as a lightweight database.
