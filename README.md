@@ -19,12 +19,12 @@ docker build -t flask-docker-app .
 
 ### 2️⃣ **Run the Docker Container**
 ```sh
-docker run -p 2222:2222 flask-docker-app
+docker run -p 1111:2222 flask-docker-app
 ```
-- The **first 2222** is the port on the host machine.
+- The **first 1111** is the port on the host machine.
 - The **second 2222** is the port inside the container where the Flask app runs.
 - The API will be available at:  
-  📌 **http://127.0.0.1:2222/**
+  📌 **http://127.0.0.1:1111/**
 
 ---
 ## API Endpoints
